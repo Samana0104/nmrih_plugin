@@ -9,12 +9,12 @@ public Plugin:myinfo =
 	url 			= "."
 }
 
-Handle g_serverTimer = INVALID_HANDLE;
 
-public OnPluginStart() 
+public OnMapStart() 
 {
-    g_serverTimer = CreateTimer(1.0, changePlayerStatePerTime, _, TIMER_REPEAT); 
+	CreateTimer(0.5, changePlayerStatePerTime, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
+
 
 public Action changePlayerStatePerTime(Handle timer) 
 {	
@@ -25,9 +25,4 @@ public Action changePlayerStatePerTime(Handle timer)
 	}
 
 	return Plugin_Continue;
-}
-
-public OnPluginEnd()
-{
-	CloseHandle(g_serverTimer);
 }

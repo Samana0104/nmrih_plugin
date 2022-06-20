@@ -3,15 +3,14 @@
 public Plugin:myinfo =
 {
 	name = "third person",
-	author = ".",
+	author = "사마나",
 	description = ".",
 	version = ".",
 	url = "."	
 };
 
 const int NMRIH_MAX_PLAYERS = 8;
-bool isPlayerThirdPerson[NMRIH_MAX_PLAYERS];
-
+bool isPlayerThirdPerson[NMRIH_MAX_PLAYERS+1] = {false, ...};
 
 public OnPluginStart()
 {
