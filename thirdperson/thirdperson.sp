@@ -33,9 +33,7 @@ public Action:thirdPersonCommand(client, args)
 
 public turnOffThirdPerson(int client)
 {
-	SetEntPropEnt(client, Prop_Send, "m_hObserverTarget", -1);
 	SetEntProp(client, Prop_Send, "m_iObserverMode", 0);
-	SetEntProp(client, Prop_Send, "m_bDrawViewmodel", 1);
 	isPlayerThirdPerson[client] = false;	
 }
 
@@ -43,7 +41,7 @@ public turnOnThirdPerson(int client)
 {
 	SetEntPropEnt(client, Prop_Send, "m_hObserverTarget", client)
 	SetEntProp(client, Prop_Send, "m_iObserverMode", 1);
-	SetEntProp(client, Prop_Send, "m_bDrawViewmodel", 0);
+
 	isPlayerThirdPerson[client] = true;	
 }
 
